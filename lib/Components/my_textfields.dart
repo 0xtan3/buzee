@@ -1,11 +1,24 @@
 import 'package:flutter/material.dart';
-class My_textfield extends StatelessWidget {
-  const My_textfield({Key? key}) : super(key: key);
+class my_textfield extends StatelessWidget {
+  //to make both input differ
+  final controller;
+  final String hintText;
+  final bool obscureText;
+
+  const my_textfield({super.key,
+    required this.controller,
+    required this.hintText,
+    required this.obscureText
+  });
+
 
   @override
   Widget build(BuildContext context) {
     return Padding(padding: const EdgeInsets.symmetric(horizontal: 25.0),
       child:TextField(
+        // defines what to be typed
+        controller: controller,
+        obscureText: obscureText,
         decoration: InputDecoration(
           enabledBorder: const OutlineInputBorder(
             borderSide: BorderSide(color: Colors.white),
@@ -15,6 +28,8 @@ class My_textfield extends StatelessWidget {
           ),
           fillColor: Colors.grey.shade200,
           filled: true,
+          hintText: hintText,
+          hintStyle: TextStyle(color: Colors.grey[500])
         ),
       ),
     );
