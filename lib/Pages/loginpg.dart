@@ -1,20 +1,27 @@
 import 'package:buzee/Components/my_button.dart';
 import 'package:buzee/Components/my_textfields.dart';
 import 'package:buzee/Components/square_tile.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-class loginpg extends StatelessWidget {
-  loginpg({Key? key}) : super(key: key);
+class LoginPage extends StatelessWidget {
+  LoginPage({Key? key}) : super(key: key);
 
   //text editing controllers
-  final usernameController = TextEditingController();
+  final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
   //sign user in method
-  void signUserIn(){}
+  void signUserIn() async{
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text,
+        password: passwordController.text,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       backgroundColor: Colors.grey[300],
       body: SafeArea(
         child: Center(
@@ -36,10 +43,10 @@ class loginpg extends StatelessWidget {
               ),
 
               const SizedBox(height: 25),
-            //username textfield
+            //email textfield
               my_textfield(
-                controller: usernameController,
-                hintText: 'username',
+                controller: emailController,
+                hintText: 'Email',
                 obscureText: false,
               ),
 
@@ -96,7 +103,7 @@ class loginpg extends StatelessWidget {
                       child: Divider(
                         thickness: 0.5,
                         color: Colors.grey[400],
-                      )
+                      ),
                     ),
                   ],
                 ),
@@ -126,7 +133,7 @@ class loginpg extends StatelessWidget {
                   style:TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),
                   ),
                 ],
-              )
+              ),
             ],
           ),
         ),

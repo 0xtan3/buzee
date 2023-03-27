@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "622716077511",
+    "project_id": "buzee-backend",
+    "storage_bucket": "buzee-backend.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:622716077511:android:08a24bfdf3da9800fa85e2",
+        "android_client_info": {
+          "package_name": "com.example.buzee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "622716077511-onpot2fg7cukqn422lopmqidsfrlp803.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmNci59zI0pO9zzknwU9V_EZgs6r8vFHY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "622716077511-onpot2fg7cukqn422lopmqidsfrlp803.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
